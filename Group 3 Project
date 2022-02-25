@@ -1,0 +1,9 @@
+package groupProject:
+/** 
+This Gives the amount for main campuss and tuition 
+*\
+public class groupProject
+{
+   public static void main(String[] args)
+   {
+   
