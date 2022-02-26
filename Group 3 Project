@@ -1,12 +1,22 @@
 package group3Project;
 
-public class group3Prject {
+import java.util.Scanner;
 
-public static void main(String[] args) {
+public class group3Project{
+	
+	public static void main(String[] args) {
 
-	 { 
-	        if(1<2);
-              System.out.println(you get money)
-	   
-	        }
+		 { 
+			 double name, //name 
+			 
+			  Scanner keyboard= new Scanner(System.in);
+			 // Ask for full name
+			 System.out.print("Type Your Full Name: ");
+			 name = keyboard.nextDouble();
+		        if(name <= 10000000);
+	              System.out.println("Error");
+		   
+		        }
+	}
+}
    
