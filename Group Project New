@@ -113,7 +113,7 @@ public static double calculateTuition(int sumCredits)
   
 
   else if(sumCredits >= 12 && sumCredits <= 18) 
-      tuition = 715.00;
+      tuition = 715.00 * sumCredits;
   
   
     
