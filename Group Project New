@@ -1,0 +1,144 @@
+// This is what the name of the package is. 
+
+// By convention, the package should start the program.
+// In this project, we referenced the textbook, Chapters 1 through 3, and instructor power points.
+
+// This is a description of our project...
+
+/* The goal of our project is to develop a program that determines the cost of attendance. Originally, this included the cost of attendance. 
+ * 
+ * We narrowed down to cost of tuition to manage our program and get the code  to run.
+ * 
+ * This program aims to calculate the cost of tuition for a Campbell student based on
+ * the number of courses and credits that a student is taking.
+ * 
+ * Group members: Josiah, Seth, and Samantha.
+ */
+package CostofTuition;
+
+import java.util.Scanner; 
+
+public class CostofTuition
+{
+	// This was a suggestion by Eclipse, and was generated to stop an error. 
+	private static final int getNumberOfStudentCourses = 0;
+
+
+	public static void main(String[] args)
+	{
+		// This method is supposed to read the keyboard.
+		Scanner keyboard = new Scanner(System.in);
+		
+		
+		// This is what the user should see when the program starts up.
+		System.out.println("Hello Campbell Student,");
+        System.out.println("\nUse this program to calculate your cost of tuition based on the number of courses \n");
+        System.out.println("and credit hours that you are taking.");
+
+		
+        // Here, the student enters his or her name.
+        String name = getNameOfStudent(); 
+		
+        /* Here, the program should ask the student to enter the number of courses that he or she is taking.
+         * "int" describes the data type.
+         * The variable "numberOfStudentCourses", represents the number of courses that a student inputs that he or she is taking.
+         */
+		int numberOfStudentCourses = getStudentCourseNumber(); 
+		
+		// This is supposed to calculate the cost of student tuition.
+		double studentTuition = calculateTuition(numberOfStudentCourses);
+		// This is supposed to print the student cost of tuition.
+		printTuition(name, numberOfStudentCourses, studentTuition);
+	}
+
+
+	/* This public static is supposed to print the cost of student tuition.
+	 * 
+	 * After the user has entered his or her responses from the prompts given, the program should output the student's name,
+	 * and the number of courses that he or she is taking.
+	 * 
+	 * Based on this, the program should output to the user
+	 * the cost of tuition based on the number of courses and number of credit hours a student is taking.
+	 * 
+	 * This is how the program should retrieve the student's name,
+	 * by the student inputting his or her name.
+	 */
+public static String getNameOfStudent() 
+{
+	//I included another scanner keyboard here to stop the error in the program. My assumption is that it most likely
+	//accounts for the "String name" in this public static.
+	Scanner keyboard = new Scanner(System.in);
+	
+	//Here the student should enter his or her name.
+	System.out.println("\nTo start, what is your name?: ");
+    String name = keyboard.nextLine();
+    // The return here should output the name the student enters.
+    return name;
+   
+}
+    // This public static method is supposed to get the number of courses that a student is taking
+    // and sum up the number of student courses. 
+public static int getStudentCourseNumber()
+{
+	// The Scanner keyboard is here to prevent errors in the running of the code.
+	Scanner keyboard = new Scanner(System.in);
+	
+	// Here, the user should be asked to input the number of courses that he or she is taking.
+  System.out.println("How many courses are you taking?");
+    int numberOfCourses = Integer.parseInt(keyboard.nextLine());
+    // This should provide the sum of credits that a students is taking based on the
+    // number of courses
+    int sumCredits = 0;
+    
+    // Here, depending on how many courses a student inputs that he or she is taking, the program should
+    // display the course number.
+    // Ex. course 1, course 2.
+    for(int i=1;i<=numberOfCourses;i++)
+    {
+        System.out.printf("Please enter the number of credits for course %d: ",i);
+        sumCredits += Integer.parseInt(keyboard.nextLine());
+    }
+   // This should output the sum of credits entered by the user. 
+  return sumCredits; 
+}
+ 
+// This method is supposed to calculate the student tuition. 
+public static double calculateTuition(int sumCredits)
+{
+  double tuition = 0;
+   
+// Here is the start of the if, else-if statements. 
+  if(sumCredits < 12) 
+      tuition = 715.00 * sumCredits;
+  
+
+  else if(sumCredits >= 12 && sumCredits <= 18) 
+      tuition = 715.00;
+  
+  
+    
+    else if(sumCredits > 18)
+        tuition =  715.00 + (sumCredits-18) * 715.00;
+     
+     
+     
+     else if(sumCredits < 12) 
+      tuition = 450.00 *sumCredits;
+         
+ // Here, the program should output the calculated cost of student tuition.   
+  return tuition;
+}
+ 
+// In this method, the program prints the student name, number of credits, 
+// cost of tuition based on the number of credits. 
+public static void printTuition(String name, int numCredits, double studentTuition)
+{
+   
+        System.out.printf("\nTuition calculation for %s\n",name);
+        System.out.printf("Credits Taken = %d\n",numCredits);
+        System.out.printf("Tuition Cost = $%.2f\n",studentTuition);
+   
+}
+
+}
+// This is the end of the CostofTuition program.
