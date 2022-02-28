@@ -1,14 +1,13 @@
-package CostOfAttendance;
+package CostofTuition;
 
 import java.util.Scanner;
 
-public class CostOfAttendance {
- 
-    // make keyboard reader
+public class CostofTuition 
+{
+    
+	// make keyboard reader
     public static final Scanner kybd = new Scanner(System.in);
 
-	private static final int NumberCourses = 0;
- 
     public static void main (String [ ] args)
     {
      
@@ -19,17 +18,22 @@ public class CostOfAttendance {
         // Ask the student to enter his or her name. 
         String name = getStudentName();
          
-    
-        
+       
         // Ask the student to enter the number of courses he or she is taking.
         // "int" describes the data type.
         // The variable here is "numCourses", representing the number of courses a student is taking. 
         
-    int numCourses = getNumberCourses();
+        int numCourses = getNumberCourses();
          
         // This variable to to calculate the cost of tuition. 
-        double tuitionCost = calculateTuition(NumberCourses);
-      }
+        double tuitionCost = calculateTuition(numCourses);
+        
+        // print tuition
+        printTuition(name, numCourses, tuitionCost);
+         
+    }
+   
+ 
         // This variable is to print the cost of tuition.
         // After the user has entered responses from the prompts given, the program should output the student's name,
         // and the number of courses he or she is taking. 
@@ -38,7 +42,6 @@ public class CostOfAttendance {
 
 	// This private static int was a suggestion from Eclispse, and automatically generated. 
      
-
 
 	// This is how a the program is to retrieve the student name,
     // by the student inputting his or her name. 
@@ -106,4 +109,5 @@ public class CostOfAttendance {
             System.out.printf("Tuition Cost = $%.2f\n",tuitionCost);
        
     }
+
 }
